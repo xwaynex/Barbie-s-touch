@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
 :root {
     --primary-color:#e50914;
     --dark-color: #141414;
@@ -14,6 +16,210 @@ body {
     -webkit-font-smoothing: antialiased;
     background: #000;
     color: #999;
+}
+
+
+/* form */
+.formBody {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #000;
+}
+
+.formBody h1 {
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+
+.formBody p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px; 
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+.formBody span {
+    font-size: 12px;
+}
+
+.formBody a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.formContainer {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.formContainer form{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.social-container {
+    margin: 20px 0;
+}
+
+.social-container a {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+}
+
+.form-container input {
+    background: #eee;
+    border: none;
+    width: 100%;
+    padding: 8px 15px;
+    margin: 8px 0;
+}
+
+.button {
+    border-radius: 20px;
+    border: 1px solid #e50914;
+    background: #e50914;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+button.ghost {
+    background: transparent;
+    border-color: #fff;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 1;
+}
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.overlay {
+    background: #e50914;
+    background: linear-gradient(to right, #e22832, #e50914) no-repeat 0 0 / cover;
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay h1 {
+    color: #fff;
+}
+
+.overlay-panel {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+/* Animation */
+
+/* Move signin to the right */
+.formContainer.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+/* Move overlay to left */
+.formContainer.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+/* Bring up sign up */
+.formContainer.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+/* move overlay back to right */
+.formContainer.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.formContainer.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.formContainer.right-panel-active .overlay-right {
+    transform: translateX(20%);
 }
 
 ul {
@@ -37,6 +243,8 @@ img {
     width: 100%;
 }
 
+
+/* showcase */
 .showcase {
     width: 100%;
     height: 100vh;
@@ -63,9 +271,9 @@ img {
 }
 
 .showcase-top img {
-    width:100px;
+    width: 100px;
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -74,8 +282,9 @@ img {
     position:absolute;
     top:50%;
     right:0;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%) 
 }
+
 
 .showcase-content {
     position: relative;
@@ -105,6 +314,40 @@ img {
     margin: 0 0 2rem;
 }
     
+/* popup */
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    transition: 200ms ease-in-out;
+}
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scale(0);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.opup-overlay.active {
+    transform: scale(1);
+    pointer-events: all;
+}
 
 
 /* Tabs */
@@ -233,6 +476,79 @@ margin-bottom: 1rem;
 
 .text-dark {
     color: #999;
+}
+
+
+.more {
+    color: var(--primary-color);
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid #000;
+    border-radius: 10px;
+    z-index: 100;
+    background: #fff;
+    color: #000;
+    width: 500px;
+    max-width: 80%;
+}
+
+div .modal.active{
+    transform:translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+}
+
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+.modal-body a {
+    margin-top: 2%;
+}
+
+#modal-overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+#modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 99;
 }
 
 

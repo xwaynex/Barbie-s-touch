@@ -13,8 +13,65 @@
     <header class="showcase">
         <div class="showcase-top">
             <img src="./images/logo.png" alt="Barbie's Touch">
-            <a href="#" class="btn btn-rounded">Sign in</a>
+            <a href="#popup" class="btn btn-rounded popup-Button" id="signIn">Sign in</a>
         </div>
+
+        <div id="popup" class="popup">
+            <div class="formBody">
+                <div class="popupContent" id="popupContent">
+                    <div class="formContainer" id="formContainer">
+                        <div class="form-container sign-up-container">
+                            <form action="#">
+                                <h1>Create Account</h1>
+                                <div class="social-container">
+                                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <span>or use your email for registration</span>
+                                <input type="text" placeholder="Input Name">
+                                <input type="email" placeholder="Input Email">
+                                <input type="password" placeholder="Input password">
+                                <button class="button">Sign Up</button>
+                            </form>
+                        </div>
+                        <div class="form-container sign-in-container">
+                            <form action="#">
+                                <h1>Sign in</h1>
+                                <div class="social-container">
+                                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <span>or us your account</span>
+                                <input type="email" placeholder="Input Email">
+                                <input type="password" placeholder="Input Password">
+                                <a href="#">Forgot your password?</a>
+                                <button class="button">Sign In</button>
+                            </form>
+                        </div>
+                        <div class="overlay-container">
+                            <div class="overlay">
+                                <div class="overlay-panel overlay-left">
+                                    <h1>Welcome Back</h1>
+                                    <p>
+                                        To Keep connected with us please login with your personal info
+                                    </p>
+                                    <button class="ghost button" id="SignIn">Sign In</button>
+                                </div>
+                                <div class="overlay-panel overlay-right">
+                                    <h1>Hello, Friend</h1>
+                                    <p>Enter your personal details and start journey with us</p>
+                                    <button class="ghost button" id="SignUp">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-overlay"></div>
+
         <div class="showcase-content">
             <h1>Your Dream Touch</h1>
             <p>Complete that look</p>
@@ -68,19 +125,35 @@
                     <img src="./images/Ventilation.png" alt="">
                     <p class="text-md">Ventilation</p>
                     <p class="text-dark">Choose a personalized Ventilation style- just for you</p>
+                    <a href="#" class="btn btn-lg">Ventilate Now!</a>
                 </div>
 
                 <div>
                     <img src="./images/wigfixing.jpg" alt="">
                     <p class="text-md">Wig fixing</p>
                     <p class="text-dark">Fix your wigs at cheap affordable prices.</p>
+                    <a href="#" class="btn btn-lg">Fix now!</a>
                 </div>
 
                 <div>
                     <img src="./images/Wigtreatment.jpg" alt="">
                     <p class="text-md">Hair & Wig treatment</p>
-                    <p class="text-dark">Watch free hair and wig treatmeant tutorial videos
-                        (for consultation and hair treatment services click the link below)
+                    <p class="text-dark">Watch free hair and wig treatmeant tutorial videos...
+                    <a href="#" data-modal-target="#modal" class="more">more</a>
+                    <div class="modal" id="modal">
+                        <div class="modal-header">
+                            <div class="title">More details</div>
+                            <button data-close-button class="close-button"> &times;</button>
+                        </div>
+                    <div class="modal-body">
+                        For Consultation and Hair Treatment Services Click The link Below. <br>
+                        <a href="#" class="btn btn-lg">Contact Us</a>
+                    </div>
+                    </div>
+                    
+                    <div id="modal-overlay"></div>
+                        
+                        <a href="#" class="btn btn-lg">Youtube Videos!</a>
                     </p>
                 </div>
 
